@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Layout, Drawer, Navigation, Content, Header} from 'react-mdl';
+import Main from './components/main';
+import { Link } from 'react-router-dom';
 
 class App extends Component {
   render() {
@@ -8,23 +10,24 @@ class App extends Component {
       <div className="App">
       <div style={{height: '100vh', position: 'relative'}}>
     <Layout fixedHeader>
-        <Header title={<span><span style={{ color: '#ddd' }}>Area / </span><strong>The Title</strong></span>}>
+        <Header title={<span><span style={{ color: '#ddd' }}>News </span><strong>Feed</strong></span>}>
             <Navigation>
-                <a href="#">Link</a>
-                <a href="#">Link</a>
-                <a href="#">Link</a>
-                <a href="#">Link</a>
+                <Link to="/latest">latest</Link>
+                <Link to="/other">other</Link>
+                <Link to="/about">about</Link>
             </Navigation>
         </Header>
-        <Drawer title="Title">
+        <Drawer title="News Feed App">
             <Navigation>
-                <a href="#">Link</a>
-                <a href="#">Link</a>
-                <a href="#">Link</a>
-                <a href="#">Link</a>
+                <Link to="/latest">latest</Link>
+                <Link to="/other">other</Link>
+                <Link to="/about">about</Link>
             </Navigation>
         </Drawer>
-        <Content />
+        <Content>
+          <div className='page-content' />
+          <Main />
+        </Content>
     </Layout>
 </div>
       </div>

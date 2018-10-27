@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class Other extends Component {
     render(){
@@ -8,4 +8,4 @@ class Other extends Component {
     }
 }
 
-export default Resume;
+export default Other;
