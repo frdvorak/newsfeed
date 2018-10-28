@@ -1,9 +1,9 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Latest from '../components/latest';
-import About from '../components/about';
-import Other from '../components/other';
+import Latest from './Latest';
+import About from './About';
+import Other from './Other';
 
 const Main = () => (
     <Switch>
