@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import Article from './Article';
+import Headline from './Headline';
 
 class Latest extends Component {
     state = {
         articles: [],
+        headlines: [],
     }
     componentDidMount = async () => {
         let articleArray = [];
+        let headlineArray = [];
         let id = 1;
         // call api, convert it to JSON, save that in variable 'data'
         const api_call = await fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=09b4242d1a2847b1b520eeb23adabd9d');
@@ -16,34 +19,47 @@ class Latest extends Component {
         
         data.articles.forEach((article)=> {
             
-        // change time into more readable string
+            // change time into more readable string
+            let timeString = article.publishedAt.substring(0,10) + ' ' + article.publishedAt.substring(11,16);
             
+            // show only first 250 charactes or articles content
+            let contentString;
+            if (article.content){
+                contentString = article.content.substring(0,250) + ' ...';
+            //console.log(contentString);
+            }
+
             // filter articles that have an image
-            if (article.urlToImage != null) {
-                let oneArticle = <Article key={id} title={article.title} time={article.publishedAt} source={article.source.name} 
-                                url={article.url} content={article.content} image={article.urlToImage}/>;
-                console.log(article.urlToImage);
+            if ((article.urlToImage != null)&&(contentString)) {
+                let oneArticle = <Article key={id} title={article.title} time={timeString} source={article.source.name} 
+                                url={article.url} content={contentString} image={article.urlToImage}/>;
                 articleArray.push(oneArticle);
             }
-            // filter articles that DONT have an image
+            // filter articles that DONT have an image use the news for sidebar
+            else {
+                let oneArticle = <Headline key={id} title={article.title} time={timeString} source={article.source.name} 
+                                url={article.url} content={contentString} image={article.urlToImage}/>;
+                headlineArray.push(oneArticle);
+                console.log(article.title);
+            }
 
-            // 
-
-
-            //console.log(oneArticle);
             id++;
         })
-        
-        this.setState({articles: articleArray})
+        //console.log(headlineArray);
+        this.setState({articles: articleArray, headlines:headlineArray})
     };
 
     render(){
         return(
-            <div className='latestGrid'>
-                
-                {this.state.articles}
-                <a href='https://newsapi.org/'>https://newsapi.org/</a>
-                
+            <div className='latestPageContent'>
+                <div className='leftCollumn'>
+                    {this.state.articles}
+                    <a href='https://newsapi.org/'>https://newsapi.org/</a>
+                </div>
+                <div className='rightCollumn'>
+                    {this.state.headlines}
+                    <a href='https://newsapi.org/'>https://newsapi.org/</a>
+                </div>
             </div>
         )
     }

@@ -4,16 +4,25 @@
 .App {
   text-align: center;
 }
+/** LATEST PAGE CONTENT **************************************/
+.latestPageContent {
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
 
-/** ARTICLE *********************************************/
+/** LEFT COLLUMN *********************************************/
+.leftCollumn {
+  display: grid;
+  grid-template-columns: 50% 50% ;
+}
 .article {
   //border: 1px solid black;
   box-sizing: border-box;
   padding: 10px;
 }
-.latestGrid {
+.leftCollumn {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 50% 50% ;
 }
 .article header {
   position: relative;
@@ -27,7 +36,7 @@
   padding: 10px 0; margin: 0;
   width: 100%;
   height: auto;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.7);
   color: white;
   
   bottom: 20px;
@@ -35,7 +44,7 @@
 .subheader {
   position: absolute;
   width: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.7);
   color: white;
   height: 20px;
   bottom: 0px;
@@ -47,4 +56,15 @@
 .articleTime {
   position: absolute;
   right: 5px;
+}
+
+/** RIGHT COLLUMN *********************************************/
+.rightCollumn {
+
+}
+
+.headline:nth-child(even) {
+  background: rgba(0,0,0,0.7);
+
+ 
 }
