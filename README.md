@@ -1,3 +1,16 @@
+Live News app pulling the latest articles from https://newsapi.org. Under construction.
+
+-- React, APIs, React MDL, React Router
+
+![livenews](https://user-images.githubusercontent.com/40566364/47621429-9cf2d900-daef-11e8-9f7b-6e2b8b2712af.jpg)
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
