@@ -6,15 +6,25 @@ class Latest extends Component {
     state = {
         articles: [],
         headlines: [],
+        date: undefined,
+        
     }
     componentDidMount = async () => {
         let articleArray = [];
         let headlineArray = [];
         let id = 1;
+
+        // get current date
+        //let date = Date.now()
+        let now = new Date().toString().substring(0,15);
+        console.log(now);
+        this.setState({date: now});
+
         // call api, convert it to JSON, save that in variable 'data'
         const api_call = await fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=09b4242d1a2847b1b520eeb23adabd9d');
         const data = await api_call.json();
         
+
         // iterate through the data and push it into articleArray in state
         
         data.articles.forEach((article)=> {
@@ -26,16 +36,15 @@ class Latest extends Component {
             let contentString;
             if (article.content){
                 contentString = article.content.substring(0,250) + ' ...';
-            //console.log(contentString);
             }
 
-            // filter articles that have an image
+            // filter latest articles that have an image
             if ((article.urlToImage != null)&&(contentString)) {
                 let oneArticle = <Article key={id} title={article.title} time={timeString} source={article.source.name} 
                                 url={article.url} content={contentString} image={article.urlToImage}/>;
                 articleArray.push(oneArticle);
             }
-            // filter articles that DONT have an image use the news for sidebar
+            // filter latest articles that DONT have an image use the news for sidebar
             else {
                 let oneArticle = <Headline key={id} title={article.title} time={timeString} source={article.source.name} 
                                 url={article.url} content={contentString} image={article.urlToImage}/>;
@@ -45,8 +54,7 @@ class Latest extends Component {
 
             id++;
         })
-        //console.log(headlineArray);
-        this.setState({articles: articleArray, headlines:headlineArray})
+        this.setState({articles: articleArray, headlines:headlineArray});
     };
 
     render(){
@@ -58,7 +66,8 @@ class Latest extends Component {
                 </div>
                 <div className='rightCollumn'>
                     {this.state.headlines}
-                    <a href='https://newsapi.org/'>https://newsapi.org/</a>
+                    {this.state.date}
+                    
                 </div>
             </div>
         )

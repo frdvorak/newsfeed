@@ -30,6 +30,13 @@
 .article header img{
   width: 100%;
   height: auto;
+  display: none;
+}
+.leftCollumn header {
+  display: block;
+  height: 200px;
+  background-size: cover;
+
 }
 .article header h5{
   position: absolute;
@@ -62,9 +69,16 @@
 .rightCollumn {
 
 }
-
+.headline {
+  line-height: 50px;
+}
+.headline a {
+  line-height: 10px;
+  text-decoration: none;
+  color: black;
+}
 .headline:nth-child(even) {
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.2);
 
  
 }

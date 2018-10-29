@@ -2,10 +2,14 @@ import React, { Component } from 'react';
 
 
 class Article extends Component {
+    
+
     render(){
+        //let backgroundImage = 'url(' +{this.props.image} +')';
+        //let Background = {this.props.image};
         return(
             <div className="article">
-                <header>
+                <header style={{backgroundImage: `url(${this.props.image})`}}>
                     <img src={this.props.image} alt='' />
                     <h5>{this.props.title}</h5>
                     <div className='subheader'>

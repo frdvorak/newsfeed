@@ -10,18 +10,18 @@ class App extends Component {
       <div className="App">
       <div style={{height: '100vh', position: 'relative'}}>
     <Layout fixedHeader>
-        <Header title={<span><span style={{ color: '#ddd' }}>News </span><strong>Feed</strong></span>}>
+        <Header title={<span><span style={{ color: '#ddd' }}>Live </span><strong>News</strong></span>}>
             <Navigation>
-                <Link to="/latest">latest</Link>
-                <Link to="/other">other</Link>
-                <Link to="/about">about</Link>
+                <Link to="/latest"><strong>Top</strong> headlines</Link>
+                <Link to="/other"><strong>All</strong> news</Link>
+                <Link to="/about"><strong>About</strong> website</Link>
             </Navigation>
         </Header>
-        <Drawer title="News Feed App">
+        <Drawer title="Live News">
             <Navigation>
-                <Link to="/latest">latest</Link>
-                <Link to="/other">other</Link>
-                <Link to="/about">about</Link>
+                <Link to="/latest"><strong>Top</strong> headlines</Link>
+                <Link to="/other"><strong>All</strong> news</Link>
+                <Link to="/about"><strong>About</strong> website</Link>
             </Navigation>
         </Drawer>
         <Content>
