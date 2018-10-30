@@ -9,3 +9,27 @@
     color: blue;
 }
 
+.calendar span {
+    display: block;
+    font-size: 30px;
+    
+}
+.calendar span:nth-child(1) {
+    height: 40px;
+    background: black;
+    color: white;
+    line-height: 40px;
+}
+
+.calendar span:nth-child(2) {
+    height: 120px;
+    line-height: 120px;
+    background: blue;
+    font-size: 100px;
+}
+.calendar span:nth-child(3) {
+    height: 40px;
+    background: black;
+    color: white;
+    line-height: 40px;
+}

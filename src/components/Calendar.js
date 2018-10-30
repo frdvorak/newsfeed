@@ -31,10 +31,11 @@ class Calendar extends Component {
     render(){
         return(
             <div className="calendar">
-                <span>{this.state.dayName}</span>
                 <span>{this.state.month}</span>
                 <span>{this.state.dayNumber}</span>
-                <span>{this.state.year}</span>
+                <span>{this.state.dayName}</span>
+                
+                
             </div>
         )
     }
