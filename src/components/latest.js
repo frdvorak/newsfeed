@@ -59,9 +59,10 @@ class Latest extends Component {
                     <a href='https://newsapi.org/'>https://newsapi.org/</a>
                 </div>
                 <div className='rightCollumn'>
+                <Calendar /> 
                     {this.state.headlines}
                     
-                <Calendar />  
+                 
                 </div>
             </div>
         )
