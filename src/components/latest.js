@@ -1,24 +1,18 @@
 import React, { Component } from 'react';
 import Article from './Article';
 import Headline from './Headline';
+import Calendar from '../components/Calendar'
 
 class Latest extends Component {
     state = {
         articles: [],
         headlines: [],
-        date: undefined,
-        
     }
     componentDidMount = async () => {
         let articleArray = [];
         let headlineArray = [];
         let id = 1;
 
-        // get current date
-        //let date = Date.now()
-        let now = new Date().toString().substring(0,15);
-        console.log(now);
-        this.setState({date: now});
 
         // call api, convert it to JSON, save that in variable 'data'
         const api_call = await fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=09b4242d1a2847b1b520eeb23adabd9d');
@@ -66,8 +60,8 @@ class Latest extends Component {
                 </div>
                 <div className='rightCollumn'>
                     {this.state.headlines}
-                    {this.state.date}
                     
+                <Calendar />  
                 </div>
             </div>
         )
