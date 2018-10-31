@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Calendar.css';
+import './calendar.css';
 
 class Calendar extends Component {
     state = {
@@ -13,7 +13,6 @@ class Calendar extends Component {
         // get current date
         let now = new Date().toString().substring(0,15);
         
-
         let dayName = now.substring(0,3);
         let month = now.substring(4,7);
         let dayNumber = now.substring(8,10);

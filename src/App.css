@@ -7,67 +7,59 @@
 /** LATEST PAGE CONTENT **************************************/
 .latestPageContent {
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: auto 210px;
 }
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .latestPageContent {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+} 
 
 /** LEFT COLLUMN *********************************************/
 .leftCollumn {
   display: grid;
   grid-template-columns: 50% 50% ;
 }
-.article {
-  //border: 1px solid black;
-  box-sizing: border-box;
-  padding: 10px;
-}
-.leftCollumn {
-  display: grid;
-  grid-template-columns: 50% 50% ;
-}
-.article header {
-  position: relative;
-}
-.article header img{
-  width: 100%;
-  height: auto;
-  display: none;
-}
-.leftCollumn header {
-  display: block;
-  height: 200px;
-  background-size: cover;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .leftCollumn {
+    grid-template-columns: 100% ;
+  }
+} 
 
-}
-.article header h5{
-  position: absolute;
-  padding: 10px 0; margin: 0;
-  width: 100%;
-  height: auto;
-  background: rgba(0,0,0,0.7);
-  color: white;
-  
-  bottom: 20px;
-}
-.subheader {
-  position: absolute;
-  width: 100%;
-  background: rgba(0,0,0,0.7);
-  color: white;
-  height: 20px;
-  bottom: 0px;
-}
-.articleSource {
-  position: absolute;
-  left: 5px;
-}
-.articleTime {
-  position: absolute;
-  right: 5px;
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .leftCollumn {
+    grid-template-columns: 100%;
+  }
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .leftCollumn {
+    grid-template-columns: 50% 50% ;
+  }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .leftCollumn {
+    grid-template-columns: 33.3% 33.3% 33.3%;
+  }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .leftCollumn {
+    grid-template-columns: 25% 25% 25% 25%;
+  }
 }
 
 /** RIGHT COLLUMN *********************************************/
-.rightCollumn {
-
+.headlines {
+  width: 200px;
 }
 .headline {
   line-height: 50px;

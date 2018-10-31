@@ -13,15 +13,15 @@ class App extends Component {
         <Header title={<span><span style={{ color: '#ddd' }}>Live </span><strong>News</strong></span>}>
             <Navigation>
                 <Link to="/latest"><strong>Top</strong> headlines</Link>
-                <Link to="/other"><strong>All</strong> news</Link>
-                <Link to="/about"><strong>About</strong> website</Link>
+                <Link to="/other"><strong>Movie</strong> releases</Link>
+                <Link to="/about"><strong>Weather</strong> forecast</Link>
             </Navigation>
         </Header>
         <Drawer title="Live News">
             <Navigation>
                 <Link to="/latest"><strong>Top</strong> headlines</Link>
-                <Link to="/other"><strong>All</strong> news</Link>
-                <Link to="/about"><strong>About</strong> website</Link>
+                <Link to="/other"><strong>Movie</strong> releases</Link>
+                <Link to="/about"><strong>Weather</strong> forecast</Link>
             </Navigation>
         </Drawer>
         <Content>

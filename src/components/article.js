@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
+import '../components/article.css';
 
 
 class Article extends Component {
     
 
     render(){
-        //let backgroundImage = 'url(' +{this.props.image} +')';
-        //let Background = {this.props.image};
         return(
             <div className="article">
                 <header style={{backgroundImage: `url(${this.props.image})`}}>

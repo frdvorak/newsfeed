@@ -60,7 +60,10 @@ class Latest extends Component {
                 </div>
                 <div className='rightCollumn'>
                 <Calendar /> 
+                <div className='headlines'>
                     {this.state.headlines}
+                </div>
+                
                     
                  
                 </div>
