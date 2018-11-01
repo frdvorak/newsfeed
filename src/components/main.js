@@ -1,16 +1,18 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Latest from './Latest';
-import About from './About';
-import Other from './Other';
+import TopHeadlinesUK from './TopHeadlinesUK';
+
 
 const Main = () => (
     <Switch>
-        <Route exact path="/" component={Latest} />
-        <Route exact path="/latest" component={Latest} />
-        <Route exact path="/other" component={Other} />
-        <Route exact path="/about" component={About} />
+        <Route exact path="/" component={TopHeadlinesUK} />
+        <Route exact path="/top-headlines-uk" component={TopHeadlinesUK} />
+        <Route exact path="/top-headlines-uk" component={TopHeadlinesUK} />
+        <Route exact path="/top-headlines-uk" component={TopHeadlinesUK} />
+        <Route exact path="/top-headlines-uk" component={TopHeadlinesUK} />
+        <Route exact path="/top-headlines-uk" component={TopHeadlinesUK} />
+        
     </Switch>
 )
 

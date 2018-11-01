@@ -12,16 +12,20 @@ class App extends Component {
     <Layout fixedHeader>
         <Header title={<span><span style={{ color: '#ddd' }}>Live </span><strong>News</strong></span>}>
             <Navigation>
-                <Link to="/latest"><strong>Top</strong> headlines</Link>
-                <Link to="/other"><strong>Movie</strong> releases</Link>
-                <Link to="/about"><strong>Weather</strong> forecast</Link>
+                <Link to="/top-headlines-uk"><strong>Top</strong> headlines UK</Link>
+                <Link to="/top-headlines-us"><strong>Top</strong> headlines US</Link>
+                <Link to="/ign"><strong>I</strong>GN</Link>
+                <Link to="/mtv-news"><strong>New</strong> scientist</Link>
+                <Link to="/wited"><strong>Wi</strong>red</Link>
             </Navigation>
         </Header>
         <Drawer title="Live News">
             <Navigation>
-                <Link to="/latest"><strong>Top</strong> headlines</Link>
-                <Link to="/other"><strong>Movie</strong> releases</Link>
-                <Link to="/about"><strong>Weather</strong> forecast</Link>
+                <Link to="/top-headlines-uk"><strong>Top</strong> headlines UK</Link>
+                <Link to="/top-headlines-us"><strong>Top</strong> headlines US</Link>
+                <Link to="/ign"><strong>I</strong>GN</Link>
+                <Link to="/mtv-news"><strong>New</strong> scientist</Link>
+                <Link to="/wited"><strong>Wi</strong>red</Link>
             </Navigation>
         </Drawer>
         <Content>

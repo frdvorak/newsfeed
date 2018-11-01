@@ -15,7 +15,7 @@ class Latest extends Component {
 
 
         // call api, convert it to JSON, save that in variable 'data'
-        const api_call = await fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=09b4242d1a2847b1b520eeb23adabd9d');
+        const api_call = await fetch('https://newsapi.org/v2/top-headlines?country=gb&apiKey=09b4242d1a2847b1b520eeb23adabd9d');
         const data = await api_call.json();
         
 
@@ -56,12 +56,13 @@ class Latest extends Component {
             <div className='latestPageContent'>
                 <div className='leftCollumn'>
                     {this.state.articles}
-                    <a href='https://newsapi.org/'>https://newsapi.org/</a>
+                    
                 </div>
                 <div className='rightCollumn'>
                 <Calendar /> 
                 <div className='headlines'>
                     {this.state.headlines}
+                    <a href='https://newsapi.org/'>https://newsapi.org/</a>
                 </div>
                 
                     
