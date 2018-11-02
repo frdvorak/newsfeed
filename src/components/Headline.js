@@ -9,7 +9,7 @@ class Headline extends Component {
         console.log(firstLetter);
         return(
             <div className="headline">
-                <span className='firstLetter'>{firstLetter}</span><p><a href={this.props.url} target='_blank' rel="noopener noreferrer">{this.props.title}</a></p>
+            <a href={this.props.url} target='_blank' rel="noopener noreferrer"><span className='firstLetter'>{firstLetter}</span><p>{this.props.title}</p></a>
             </div>
         )
     }

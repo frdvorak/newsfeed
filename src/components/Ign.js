@@ -15,7 +15,7 @@ class Ign extends Component {
 
 
         // call api, convert it to JSON, save that in variable 'data'
-        const api_call = await fetch('https://newsapi.org/v2/everything?sources=ign&apiKey=09b4242d1a2847b1b520eeb23adabd9d');
+        const api_call = await fetch('https://newsapi.org/v2/top-headlines?sources=ign&apiKey=09b4242d1a2847b1b520eeb23adabd9d');
         const data = await api_call.json();
         
 
