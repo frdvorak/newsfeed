@@ -61,16 +61,3 @@
 .headlines {
   width: 200px;
 }
-.headline {
-  line-height: 50px;
-}
-.headline a {
-  line-height: 10px;
-  text-decoration: none;
-  color: black;
-}
-.headline:nth-child(even) {
-  background: rgba(0,0,0,0.2);
-
- 
-}
