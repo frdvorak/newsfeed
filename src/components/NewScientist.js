@@ -3,7 +3,7 @@ import Article from './Article';
 import Headline from './Headline';
 import Calendar from '../components/Calendar'
 
-class TopHeadlinesUK extends Component {
+class NewScientist extends Component {
     state = {
         articles: [],
         headlines: [],
@@ -15,7 +15,7 @@ class TopHeadlinesUK extends Component {
 
 
         // call api, convert it to JSON, save that in variable 'data'
-        const api_call = await fetch('https://newsapi.org/v2/top-headlines?country=gb&apiKey=09b4242d1a2847b1b520eeb23adabd9d');
+        const api_call = await fetch('https://newsapi.org/v2/everything?sources=new-scientist&apiKey=09b4242d1a2847b1b520eeb23adabd9d');
         const data = await api_call.json();
         
 
@@ -73,4 +73,4 @@ class TopHeadlinesUK extends Component {
     }
 }
 
-export default TopHeadlinesUK;
+export default NewScientist;

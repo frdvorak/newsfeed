@@ -15,8 +15,9 @@ class App extends Component {
                 <Link to="/top-headlines-uk"><strong>Top</strong> headlines UK</Link>
                 <Link to="/top-headlines-us"><strong>Top</strong> headlines US</Link>
                 <Link to="/ign"><strong>I</strong>GN</Link>
-                <Link to="/mtv-news"><strong>New</strong> scientist</Link>
-                <Link to="/wited"><strong>Wi</strong>red</Link>
+                <Link to="/new-scientist"><strong>New</strong> scientist</Link>
+                <Link to="/wired"><strong>Wi</strong>red</Link>
+                <Link to="/mtv-news"><strong>MTV</strong> news</Link>
             </Navigation>
         </Header>
         <Drawer title="Live News">
@@ -24,8 +25,9 @@ class App extends Component {
                 <Link to="/top-headlines-uk"><strong>Top</strong> headlines UK</Link>
                 <Link to="/top-headlines-us"><strong>Top</strong> headlines US</Link>
                 <Link to="/ign"><strong>I</strong>GN</Link>
-                <Link to="/mtv-news"><strong>New</strong> scientist</Link>
-                <Link to="/wited"><strong>Wi</strong>red</Link>
+                <Link to="/new-scientist"><strong>New</strong> scientist</Link>
+                <Link to="/wired"><strong>Wi</strong>red</Link>
+                <Link to="/mtv-news"><strong>MTV</strong> news</Link>
             </Navigation>
         </Drawer>
         <Content>
