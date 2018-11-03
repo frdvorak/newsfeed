@@ -13,12 +13,13 @@ class Controls extends Component {
         return(
             <div className='controls' onChange={this.onChangeCountry}>
                 <select name="coutries">
-                    <option value="gb">UK</option>
-                    <option value="us">US</option>
-                    <option value="fr">FR</option>
-                    <option value="it">IT</option>
+                    <option value="gb">United Kingdom</option>
+                    <option value="us">United States</option>
+                    <option value="fr">France</option>
+                    <option value="it">Italy</option>
                 </select>
                 <select name="sources">
+                <option value="">all</option>
                     <option value="ign">IGN</option>
                     <option value="new-scientist">New Scientist</option>
                     <option value="wired">Wired</option>

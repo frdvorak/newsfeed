@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Article from './Article';
 import Headline from './Headline';
-import Calendar from '../components/Calendar'
+import Calendar from './Calendar'
 
-class Ign extends Component {
+class About extends Component {
     state = {
         articles: [],
         headlines: [],
@@ -73,4 +73,4 @@ class Ign extends Component {
     }
 }
 
-export default Ign;
+export default About;

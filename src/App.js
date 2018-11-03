@@ -5,33 +5,42 @@ import Main from './components/Main';
 import { Link } from 'react-router-dom';
 
 class App extends Component {
+    state = {
+        category: '',
+    }
+    handleClick = (e) => {
+        console.log(e.target.href);  //http://localhost:3000/top-headlines
+
+    }
+  
   render() {
     return (
       <div className="App">
       <div style={{height: '100vh', position: 'relative'}}>
-    <Layout fixedHeader>
-        <Header title={<span><span style={{ color: '#ddd' }}>Live </span><strong>News</strong></span>}>
-            <Navigation>
-                <Link to="/top-headlines"><strong>Top</strong> headlines</Link>
-                <Link to="/top-headlines-us"><strong>Top</strong> headlines US</Link>
-                <Link to="/ign"><strong>I</strong>GN</Link>
-                <Link to="/new-scientist"><strong>New</strong> scientist</Link>
-                <Link to="/wired"><strong>Wi</strong>red</Link>
-                <Link to="/mtv-news"><strong>MTV</strong> news</Link>
-            </Navigation>
-        </Header>
+        <Layout fixedHeader>
+            <Header title={<span><span style={{ color: '#ddd' }}>Live </span><strong>News</strong></span>}>
+                <Navigation >
+                    <Link to="/top-headlines" onClick={this.handleClick}><strong>Top</strong> headlines</Link>
+                    <Link to="/business"><strong>B</strong>usiness</Link>
+                    <Link to="/entertainment"><strong>E</strong>ntertainment</Link>
+                    <Link to="/health"><strong>H</strong>ealth</Link>
+                    <Link to="/science"><strong>S</strong>cience</Link>
+                    <Link to="/sports"><strong>S</strong>ports</Link>
+                    <Link to="/technology"><strong>T</strong>echnology</Link>
+                </Navigation>
+            </Header>
         <Drawer title="Live News">
             <Navigation>
                 <Link to="/top-headlines"><strong>Top</strong> headlines</Link>
-                <Link to="/top-headlines-us"><strong>Top</strong> headlines US</Link>
-                <Link to="/ign"><strong>I</strong>GN</Link>
-                <Link to="/new-scientist"><strong>New</strong> scientist</Link>
-                <Link to="/wired"><strong>Wi</strong>red</Link>
-                <Link to="/mtv-news"><strong>MTV</strong> news</Link>
+                <Link to="/business"><strong>B</strong>usiness</Link>
+                <Link to="/entertainment"><strong>E</strong>ntertainment</Link>
+                <Link to="/health"><strong>H</strong>ealth</Link>
+                <Link to="/science"><strong>S</strong>cience</Link>
+                <Link to="/sports"><strong>S</strong>ports</Link>
+                <Link to="/technology"><strong>T</strong>echnology</Link>
             </Navigation>
         </Drawer>
         <Content>
-          <div className='page-content' />
           <Main />
         </Content>
     </Layout>

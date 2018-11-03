@@ -8,11 +8,12 @@ class TopHeadlines extends Component {
     state = {
         articles: [],
         headlines: [],
-        country: 'gb',
-        category: 'science',
+        country: 'country=gb',
+        category: '',
+        source: '',
     }
     updateCountry = async (newCountry) => {
-        await this.setState({country: newCountry});
+        await this.setState({country: 'country=' + newCountry});
         this.bringArticles();
     };
     
@@ -22,7 +23,7 @@ class TopHeadlines extends Component {
         let id = 1;
 
         // call api, convert it to JSON, save that in variable 'data'
-        const url = 'https://newsapi.org/v2/top-headlines?country='+ this.state.country + '&category='+ this.state.category + '&apiKey=09b4242d1a2847b1b520eeb23adabd9d';
+        const url = 'https://newsapi.org/v2/top-headlines?'+ this.state.country + this.state.category + this.state.source +'&apiKey=09b4242d1a2847b1b520eeb23adabd9d';
         const api_call = await fetch(url);
         const data = await api_call.json();
         console.log(url);
@@ -58,7 +59,7 @@ class TopHeadlines extends Component {
     };
 
     componentDidMount = () => {
-        this.bringArticles();
+      this.bringArticles();
     };
 
     
