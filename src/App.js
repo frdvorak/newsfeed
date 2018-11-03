@@ -12,7 +12,7 @@ class App extends Component {
     <Layout fixedHeader>
         <Header title={<span><span style={{ color: '#ddd' }}>Live </span><strong>News</strong></span>}>
             <Navigation>
-                <Link to="/top-headlines-uk"><strong>Top</strong> headlines UK</Link>
+                <Link to="/top-headlines"><strong>Top</strong> headlines</Link>
                 <Link to="/top-headlines-us"><strong>Top</strong> headlines US</Link>
                 <Link to="/ign"><strong>I</strong>GN</Link>
                 <Link to="/new-scientist"><strong>New</strong> scientist</Link>
@@ -22,7 +22,7 @@ class App extends Component {
         </Header>
         <Drawer title="Live News">
             <Navigation>
-                <Link to="/top-headlines-uk"><strong>Top</strong> headlines UK</Link>
+                <Link to="/top-headlines"><strong>Top</strong> headlines</Link>
                 <Link to="/top-headlines-us"><strong>Top</strong> headlines US</Link>
                 <Link to="/ign"><strong>I</strong>GN</Link>
                 <Link to="/new-scientist"><strong>New</strong> scientist</Link>

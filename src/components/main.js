@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import TopHeadlinesUK from './TopHeadlinesUK';
+import TopHeadlines from './TopHeadlines';
 import TopHeadlinesUS from './TopHeadlinesUS';
 import Ign from './Ign';
 import NewScientist from './NewScientist';
@@ -10,8 +10,8 @@ import MtvNews from './MtvNews';
 
 const Main = () => (
     <Switch>
-        <Route exact path="/" component={TopHeadlinesUK} />
-        <Route exact path="/top-headlines-uk" component={TopHeadlinesUK} />
+        <Route exact path="/" component={TopHeadlines} />
+        <Route exact path="/top-headlines" component={TopHeadlines} />
         <Route exact path="/top-headlines-us" component={TopHeadlinesUS} />
         <Route exact path="/ign" component={Ign} />
         <Route exact path="/new-scientist" component={NewScientist} />

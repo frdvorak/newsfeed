@@ -41,6 +41,7 @@
   .leftCollumn {
     grid-template-columns: 50% 50% ;
   }
+  
 } 
 
 /* Large devices (laptops/desktops, 992px and up) */

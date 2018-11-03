@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
 import Article from './Article';
 import Headline from './Headline';
-import Calendar from '../components/Calendar'
+import Calendar from './Calendar';
+import Controls from './Controls';
 
-class TopHeadlinesUK extends Component {
+class TopHeadlines extends Component {
     state = {
         articles: [],
         headlines: [],
+        country: 'gb',
+        category: 'science',
+    }
+    updateCountry = (country) => {
+        
+        this.setState({country: country});
+        console.log(this.state.country);
     }
     componentDidMount = async () => {
         let articleArray = [];
@@ -15,12 +23,11 @@ class TopHeadlinesUK extends Component {
 
 
         // call api, convert it to JSON, save that in variable 'data'
-        const api_call = await fetch('https://newsapi.org/v2/top-headlines?country=gb&apiKey=09b4242d1a2847b1b520eeb23adabd9d');
+        const url = 'https://newsapi.org/v2/top-headlines?country='+ this.state.country + '&category='+ this.state.category + '&apiKey=09b4242d1a2847b1b520eeb23adabd9d';
+        const api_call = await fetch(url);
         const data = await api_call.json();
         
-
         // iterate through the data and push it into articleArray in state
-        
         data.articles.forEach((article)=> {
             
             // change time into more readable string
@@ -43,7 +50,6 @@ class TopHeadlinesUK extends Component {
                 let oneArticle = <Headline key={id} title={article.title} time={timeString} source={article.source.name} 
                                 url={article.url} content={contentString} image={article.urlToImage}/>;
                 headlineArray.push(oneArticle);
-                console.log(article.title);
             }
 
             id++;
@@ -56,9 +62,9 @@ class TopHeadlinesUK extends Component {
             <div className='latestPageContent'>
                 <div className='leftCollumn'>
                     {this.state.articles}
-                    
                 </div>
                 <div className='rightCollumn'>
+                <Controls updateCountry={this.updateCountry}/>
                 <Calendar /> 
                 <div className='headlines'>
                     {this.state.headlines}
@@ -73,4 +79,4 @@ class TopHeadlinesUK extends Component {
     }
 }
 
-export default TopHeadlinesUK;
+export default TopHeadlines;
