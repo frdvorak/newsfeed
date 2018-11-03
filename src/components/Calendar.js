@@ -17,7 +17,6 @@ class Calendar extends Component {
         let month = now.substring(4,7);
         let dayNumber = now.substring(8,10);
         let year = now.substring(11,15);
-        console.log(dayName, month, dayNumber, year);
         this.setState({
             dayName: dayName,
             month: month,

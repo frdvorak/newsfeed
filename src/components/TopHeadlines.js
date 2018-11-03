@@ -11,21 +11,21 @@ class TopHeadlines extends Component {
         country: 'gb',
         category: 'science',
     }
-    updateCountry = (country) => {
-        
-        this.setState({country: country});
-        console.log(this.state.country);
-    }
-    componentDidMount = async () => {
+    updateCountry = async (newCountry) => {
+        await this.setState({country: newCountry});
+        this.bringArticles();
+    };
+    
+    bringArticles = async () => {
         let articleArray = [];
         let headlineArray = [];
         let id = 1;
-
 
         // call api, convert it to JSON, save that in variable 'data'
         const url = 'https://newsapi.org/v2/top-headlines?country='+ this.state.country + '&category='+ this.state.category + '&apiKey=09b4242d1a2847b1b520eeb23adabd9d';
         const api_call = await fetch(url);
         const data = await api_call.json();
+        console.log(url);
         
         // iterate through the data and push it into articleArray in state
         data.articles.forEach((article)=> {
@@ -57,6 +57,12 @@ class TopHeadlines extends Component {
         this.setState({articles: articleArray, headlines:headlineArray});
     };
 
+    componentDidMount = () => {
+        this.bringArticles();
+    };
+
+    
+
     render(){
         return(
             <div className='latestPageContent'>
@@ -64,15 +70,12 @@ class TopHeadlines extends Component {
                     {this.state.articles}
                 </div>
                 <div className='rightCollumn'>
-                <Controls updateCountry={this.updateCountry}/>
-                <Calendar /> 
-                <div className='headlines'>
-                    {this.state.headlines}
-                    <a href='https://newsapi.org/'>https://newsapi.org/</a>
-                </div>
-                
-                    
-                 
+                    <Controls updateCountry={this.updateCountry}/>
+                    <Calendar /> 
+                    <div className='headlines'>
+                        {this.state.headlines}
+                        <a href='https://newsapi.org/'>https://newsapi.org/</a>
+                    </div>
                 </div>
             </div>
         )
