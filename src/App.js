@@ -5,13 +5,6 @@ import Main from './components/Main';
 import { Link } from 'react-router-dom';
 
 class App extends Component {
-    state = {
-        category: '',
-    }
-    handleClick = (e) => {
-        console.log(e.target.href);  //http://localhost:3000/top-headlines
-
-    }
   
   render() {
     return (
@@ -20,7 +13,7 @@ class App extends Component {
         <Layout fixedHeader>
             <Header title={<span><span style={{ color: '#ddd' }}>Live </span><strong>News</strong></span>}>
                 <Navigation >
-                    <Link to="/top-headlines" onClick={this.handleClick}><strong>Top</strong> headlines</Link>
+                    <Link to="/top-headlines"><strong>Top</strong> headlines</Link>
                     <Link to="/business"><strong>B</strong>usiness</Link>
                     <Link to="/entertainment"><strong>E</strong>ntertainment</Link>
                     <Link to="/health"><strong>H</strong>ealth</Link>

@@ -1,26 +1,45 @@
 import React, { Component } from 'react';
 import Article from './Article';
 import Headline from './Headline';
-import Calendar from '../components/Calendar'
+import Calendar from './Calendar';
+import Controls from './Controls';
 
-class TopHeadlinesUS extends Component {
+class Newspage extends Component {
     state = {
         articles: [],
         headlines: [],
+        country: 'country=gb',
+        category: '',
+        source: '',
+        previousCountry: 'country=gb',
     }
-    componentDidMount = async () => {
+    updateCountry = async (newCountry) => {
+        await this.setState({country: 'country=' + newCountry, previousCountry:'country=' + newCountry});
+        this.bringArticles();
+    };
+    updateSource = async (newSource) => {
+        if (newSource === ''){
+            await this.setState({source: '', country: this.state.previousCountry });
+            this.bringArticles();
+        }
+        else {
+            await this.setState({source: 'sources=' + newSource, country:''});
+            this.bringArticles();
+        }
+        
+    };
+    
+    bringArticles = async () => {
         let articleArray = [];
         let headlineArray = [];
         let id = 1;
-
-
         // call api, convert it to JSON, save that in variable 'data'
-        const api_call = await fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=09b4242d1a2847b1b520eeb23adabd9d');
+        const url = 'https://newsapi.org/v2/top-headlines?'+ this.state.country + this.state.category + this.state.source +'&apiKey=09b4242d1a2847b1b520eeb23adabd9d';
+        const api_call = await fetch(url);
         const data = await api_call.json();
+        console.log(url);
         
-
         // iterate through the data and push it into articleArray in state
-        
         data.articles.forEach((article)=> {
             
             // change time into more readable string
@@ -43,12 +62,16 @@ class TopHeadlinesUS extends Component {
                 let oneArticle = <Headline key={id} title={article.title} time={timeString} source={article.source.name} 
                                 url={article.url} content={contentString} image={article.urlToImage}/>;
                 headlineArray.push(oneArticle);
-                console.log(article.title);
             }
 
             id++;
         })
         this.setState({articles: articleArray, headlines:headlineArray});
+    };
+    
+
+    componentDidMount = () => {
+      this.bringArticles();
     };
 
     render(){
@@ -56,21 +79,18 @@ class TopHeadlinesUS extends Component {
             <div className='latestPageContent'>
                 <div className='leftCollumn'>
                     {this.state.articles}
-                    
                 </div>
                 <div className='rightCollumn'>
-                <Calendar /> 
-                <div className='headlines'>
-                    {this.state.headlines}
-                    <a href='https://newsapi.org/'>https://newsapi.org/</a>
-                </div>
-                
-                    
-                 
+                    <Controls updateCountry={this.updateCountry} updateSource={this.updateSource}/>
+                    <Calendar /> 
+                    <div className='headlines'>
+                        {this.state.headlines}
+                        <a href='https://newsapi.org/'>https://newsapi.org/</a>
+                    </div>
                 </div>
             </div>
         )
     }
 }
 
-export default TopHeadlinesUS;
+export default Newspage;
