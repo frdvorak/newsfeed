@@ -1,8 +1,9 @@
-Live News app pulling the latest articles from https://newsapi.org. Under construction.
+Live News app pulling the latest articles from https://newsapi.org. You can sort the news articles by country, category and source.
 
 -- React, APIs, React MDL, React Router
 
-![livenews](https://user-images.githubusercontent.com/40566364/47621429-9cf2d900-daef-11e8-9f7b-6e2b8b2712af.jpg)
+![livenews](https://user-images.githubusercontent.com/40566364/47968294-e008fb00-e05f-11e8-99b0-4d1a579c4944.jpg)
+
 
 
 
