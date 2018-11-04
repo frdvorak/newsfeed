@@ -5,11 +5,9 @@ import './controls.css';
 class Controls extends Component {
     
     onChangeCountry = (e) => {
-        
         e.preventDefault();
         let country = e.target.value;
         this.props.updateCountry(country);
-        
     }
     onChangeSource = (e) => {
         e.preventDefault();
@@ -28,7 +26,7 @@ class Controls extends Component {
                     <option value="it">Italy</option>
                 </select>
                 <select name="sources" onChange={this.onChangeSource}>
-                <option value="">all</option>
+                <option value="">All sources</option>
                     <option value="ign">IGN</option>
                     <option value="new-scientist">New Scientist</option>
                     <option value="wired">Wired</option>

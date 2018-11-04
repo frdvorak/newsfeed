@@ -14,6 +14,7 @@ class App extends Component {
         <Layout>
         <div className='header'>
             <h1>Live News</h1>
+            <img src='./planet.png' alt='planet'/>
         </div>
             <Header scroll>
             

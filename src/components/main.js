@@ -1,20 +1,27 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Newspage from './Newspage';
+import TopHeadlines from './TopHeadlines';
+import Business from './Business';
+import Entertainment from './Entertainment';
+import Health from './Health';
+import Science from './Science';
+import Sports from './Sports';
+import Technology from './Technology';
+
 import About from './About';
 
 
 const Main = () => (
     <Switch>
-        <Route exact path="/" component={Newspage} />
-        <Route exact path="/top-headlines" component={Newspage} />
-        <Route exact path="/business" component={Newspage} />
-        <Route exact path="/entertainment" component={Newspage} />
-        <Route exact path="/health" component={Newspage} />
-        <Route exact path="/science" component={Newspage} />
-        <Route exact path="/sports" component={Newspage} />
-        <Route exact path="/technology" component={Newspage} />
+        <Route exact path="/" component={TopHeadlines} />
+        <Route exact path="/top-headlines" component={TopHeadlines} />
+        <Route exact path="/business" component={Business} />
+        <Route exact path="/entertainment" component={Entertainment} />
+        <Route exact path="/health" component={Health} />
+        <Route exact path="/science" component={Science} />
+        <Route exact path="/sports" component={Sports} />
+        <Route exact path="/technology" component={Technology} />
 
         <Route exact path="/about" component={About} />
 

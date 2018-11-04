@@ -1,3 +1,9 @@
 .rightCollumn select {
-    width: 100%;
+    position: relative;
+    left: -5px;
+    top: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    width: 95%;
+    padding: 5%;
   }

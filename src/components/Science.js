@@ -4,17 +4,17 @@ import Headline from './Headline';
 import Calendar from './Calendar';
 import Controls from './Controls';
 
-class Newspage extends Component {
+class Science extends Component {
     state = {
         articles: [],
         headlines: [],
         country: 'country=gb',
-        category: '',
+        category: '&category=science',
         source: '',
         previousCountry: 'country=gb', // needed for when we select single source and return back to ALL sources, otherwise error
     }
     updateCountry = async (newCountry) => {
-        await this.setState({country: 'country=' + newCountry, previousCountry:'country=' + newCountry});
+        await this.setState({country: 'country=' + newCountry, previousCountry:'country=' + newCountry, source: '', category: ''});
         this.bringArticles();
     };
     updateSource = async (newSource) => {
@@ -23,7 +23,7 @@ class Newspage extends Component {
             this.bringArticles();
         }
         else {
-            await this.setState({source: 'sources=' + newSource, country:''});
+            await this.setState({source: 'sources=' + newSource, country:'', category: ''});
             this.bringArticles();
         }
         
@@ -93,4 +93,4 @@ class Newspage extends Component {
     }
 }
 
-export default Newspage;
+export default Science;
