@@ -4,10 +4,20 @@
 .App {
   text-align: center;
 }
+.header h1 {
+ font-size: 80px;
+}
+.mdl-layout__drawer-button{
+  display: none !important;
+}
+.mdl-layout__header-row {
+  padding: 0 !important;
+}
 /** LATEST PAGE CONTENT **************************************/
 .latestPageContent {
   display: grid;
   grid-template-columns: auto 210px;
+  
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -16,6 +26,15 @@
     grid-template-columns: 100%;
   }
 } 
+@media only screen and (max-width: 1024px) {
+  .latestPageContent {
+    margin-top: 0px;
+  }
+  .mdl-layout__drawer-button{
+    display: block !important;
+    position: absolute; top: 0; left: 0;
+  }
+}
 
 /** LEFT COLLUMN *********************************************/
 .leftCollumn {

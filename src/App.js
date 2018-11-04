@@ -10,9 +10,14 @@ class App extends Component {
     return (
       <div className="App">
       <div style={{height: '100vh', position: 'relative'}}>
-        <Layout fixedHeader>
-            <Header title={<span><span style={{ color: '#ddd' }}>Live </span><strong>News</strong></span>}>
-                <Navigation >
+        
+        <Layout>
+        <div className='header'>
+            <h1>Live News</h1>
+        </div>
+            <Header scroll>
+            
+                <Navigation>
                     <Link to="/top-headlines"><strong>Top</strong> headlines</Link>
                     <Link to="/business"><strong>B</strong>usiness</Link>
                     <Link to="/entertainment"><strong>E</strong>ntertainment</Link>
@@ -21,6 +26,7 @@ class App extends Component {
                     <Link to="/sports"><strong>S</strong>ports</Link>
                     <Link to="/technology"><strong>T</strong>echnology</Link>
                 </Navigation>
+                
             </Header>
         <Drawer title="Live News">
             <Navigation>

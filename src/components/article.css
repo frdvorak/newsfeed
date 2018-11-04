@@ -8,7 +8,7 @@
     grid-column-end: 2;
 }
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1024px) {
     .article:nth-of-type(1) {
         grid-column-start: 1;
         grid-column-end: 3;
