@@ -12,8 +12,23 @@ class Calendar extends Component {
     componentDidMount(){
         // get current date
         let now = new Date().toString().substring(0,15);
-        
+        //console.log(now);
         let dayName = now.substring(0,3);
+        if (dayName === 'Mon'){
+            dayName = 'Monday';
+        }if (dayName === 'Tue'){
+            dayName = 'Tuesday';
+        }if (dayName === 'Wed'){
+            dayName = 'Wednesday';
+        }if (dayName === 'Thu'){
+            dayName = 'Thursday';
+        }if (dayName === 'Fri'){
+            dayName = 'Friday';
+        }if (dayName === 'Sat'){
+            dayName = 'Saturday';
+        }if (dayName === 'Sun'){
+            dayName = 'Sunday';
+        }
         let month = now.substring(4,7);
         let dayNumber = now.substring(8,10);
         let year = now.substring(11,15);

@@ -37,7 +37,7 @@ class Newspage extends Component {
         const url = 'https://newsapi.org/v2/top-headlines?'+ this.state.country + this.state.category + this.state.source +'&apiKey=09b4242d1a2847b1b520eeb23adabd9d';
         const api_call = await fetch(url);
         const data = await api_call.json();
-        console.log(url);
+        //console.log(url);
                 
         // iterate through the data and push it into articleArray in state
         data.articles.forEach((article)=> {
