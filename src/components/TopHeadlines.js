@@ -3,6 +3,7 @@ import Article from './Article';
 import Headline from './Headline';
 import Calendar from './Calendar';
 import Controls from './Controls';
+import Navigation from './Navigation';
 
 class Newspage extends Component {
     state = {
@@ -82,6 +83,7 @@ class Newspage extends Component {
                     {this.state.articles}
                 </div>
                 <div className='rightCollumn'>
+                    <Navigation />
                     <Controls updateCountry={this.updateCountry} updateSource={this.updateSource}/>
                     <Calendar /> 
                     <div className='headlines'>

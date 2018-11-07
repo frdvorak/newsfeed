@@ -17,7 +17,6 @@ class App extends Component {
             <img src='./planet.png' alt='planet'/>
         </div>
             <Header scroll>
-            
                 <Navigation>
                     <Link to="/newsfeed/top-headlines"><strong>Top</strong> headlines</Link>
                     <Link to="/newsfeed/business"><strong>B</strong>usiness</Link>
@@ -27,7 +26,6 @@ class App extends Component {
                     <Link to="/newsfeed/sports"><strong>S</strong>ports</Link>
                     <Link to="/newsfeed/technology"><strong>T</strong>echnology</Link>
                 </Navigation>
-                
             </Header>
         <Drawer title="Live News">
             <Navigation>
@@ -41,7 +39,7 @@ class App extends Component {
             </Navigation>
         </Drawer>
         <Content>
-          <Main />
+            <Main />
         </Content>
     </Layout>
 </div>
