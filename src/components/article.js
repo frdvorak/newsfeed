@@ -6,19 +6,11 @@ class Article extends Component {
     
 
     render(){
-        // adjust substring coming from this.props.content to end with space, not mid-word
-        function endsWith(str){
-            let charCount = 20; // remove this many characters from the string and find a space there
-            for(let i=str.length-charCount; i<str.length; i++){
-                if(str[i]===' '){       //if we find a space, set variable spaceAt to that value
-                    var spaceAt = i;    // needs to be VAR not LET, we need function scoped
-                }else{
-                    i++;
-                }
-            }
-            return str.substring(0, spaceAt)+ '...'; //cut the string where the space is
-        }
-        const articleContent = endsWith(this.props.content);
+        // show only part of content and always end with 'space' not mid-word
+        const articleContent = this.props.content.substring(0,230); //remove the last space as every article.content ends with space
+        const lastSpaceAt = articleContent.lastIndexOf(" ");        //determine last space in that substring
+        const content = articleContent.substring(0, lastSpaceAt) + '...'; //cut the string where the space is
+        //console.log(content.length);
 
         return(
             <div className="article">
@@ -30,7 +22,7 @@ class Article extends Component {
                         <span className='articleTime'>{this.props.time}</span>
                     </div>
                 </header>
-                <p>{articleContent} <a href={this.props.url} target='_blank' rel="noopener noreferrer">full article</a></p>
+                <p>{content} <a href={this.props.url} target='_blank' rel="noopener noreferrer">full article</a></p>
             </div>
         )
     }
