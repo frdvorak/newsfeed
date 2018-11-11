@@ -2,6 +2,7 @@
     box-sizing: border-box;
     padding: 10px;
     transition: 0.2s;
+    position: relative;
 }
 .article:nth-of-type(1) {
     grid-column-start: 1;

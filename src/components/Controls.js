@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './controls.css';
 
-
 class Controls extends Component {
     
     onChangeCountry = (e) => {
@@ -15,10 +14,26 @@ class Controls extends Component {
         this.props.updateSource(source);
         //document.getElementById('countrySelector').setAttribute("value", "gb");
     }
+    onChangeCategory = (e) => {
+        e.preventDefault();
+        let category = e.target.dataset.category;
+        this.props.updateCategory(category);
+    }
     render(){
         
         return(
             <div className='controls'>
+                <div className="navigation">
+                    <ul>
+                        <li onClick={this.onChangeCategory} data-category='top-headlines'>Headlines</li>
+                        <li onClick={this.onChangeCategory} data-category='business'>Business</li>
+                        <li onClick={this.onChangeCategory} data-category='entertainment'>Entertainment</li>
+                        <li onClick={this.onChangeCategory} data-category='health'>Health</li>
+                        <li onClick={this.onChangeCategory} data-category='science'>Science</li>
+                        <li onClick={this.onChangeCategory} data-category='sports'>Sports</li>
+                        <li onClick={this.onChangeCategory} data-category='technology'>Technology</li>
+                    </ul>
+                </div>
                 <select id='countrySelector' name="coutries"  onChange={this.onChangeCountry}>
                     <option value="gb">United Kingdom</option>
                     <option value="us">United States</option>

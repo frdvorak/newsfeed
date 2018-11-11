@@ -3,9 +3,10 @@ import Article from './Article';
 import Headline from './Headline';
 import Calendar from './Calendar';
 import Controls from './Controls';
-import Navigation from './Navigation';
+import Header from './Header';
+//import Navigation from './Navigation';
 
-class Newspage extends Component {
+class NewsArticles extends Component {
     state = {
         articles: [],
         headlines: [],
@@ -20,11 +21,23 @@ class Newspage extends Component {
     };
     updateSource = async (newSource) => {
         if (newSource === ''){
-            await this.setState({source: '', country: this.state.previousCountry });
+            await this.setState({category: '', source: '', country: this.state.previousCountry });
             this.bringArticles();
         }
         else {
-            await this.setState({source: 'sources=' + newSource, country:''});
+            await this.setState({category: '', source: 'sources=' + newSource, country:''});
+            this.bringArticles();
+        }
+    
+    };
+    updateCategory = async (newCategory) => {
+        console.log(newCategory);
+        if (newCategory === 'top-headlines'){
+            await this.setState({category: '', country: this.state.previousCountry, source: '' });
+            this.bringArticles();
+        }
+        else {
+            await this.setState({category: '&category=' + newCategory, country: this.state.previousCountry, source: '' });
             this.bringArticles();
         }
         
@@ -38,7 +51,7 @@ class Newspage extends Component {
         const url = 'https://newsapi.org/v2/top-headlines?'+ this.state.country + this.state.category + this.state.source +'&apiKey=09b4242d1a2847b1b520eeb23adabd9d';
         const api_call = await fetch(url);
         const data = await api_call.json();
-        //console.log(url);
+        console.log(url);
                 
         // iterate through the data and push it into articleArray in state
         data.articles.forEach((article)=> {
@@ -76,24 +89,26 @@ class Newspage extends Component {
     };
 
     render(){
-        return(
+        return( 
+            <div>
+            <Header/ >
             <div className='latestPageContent'>
                 
                 <div className='leftCollumn'>
                     {this.state.articles}
                 </div>
                 <div className='rightCollumn'>
-                    <Navigation />
-                    <Controls updateCountry={this.updateCountry} updateSource={this.updateSource}/>
+                    <Controls updateCountry={this.updateCountry} updateSource={this.updateSource} updateCategory={this.updateCategory}/>
                     <Calendar /> 
                     <div className='headlines'>
                         {this.state.headlines}
-                        <a href='https://newsapi.org/'>https://newsapi.org/</a>
+                        <a className='apiRef' href='https://newsapi.org/'>https://newsapi.org/</a>
                     </div>
                 </div>
+            </div>
             </div>
         )
     }
 }
 
-export default Newspage;
+export default NewsArticles;

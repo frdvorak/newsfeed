@@ -5,17 +5,7 @@
   text-align: center;
 }
 
-.header h1 {
- font-size: 80px;
- background: rgb(63,81,181);
- padding: 0; margin: 0;
- color: #fff;
-}
-@media only screen and (max-width: 769px) {
-  .header h1 {
-    font-size: 30px;
-  }
-} 
+
 .header img{
   display: block;
   position: absolute;
@@ -24,18 +14,7 @@
   height: 300px;
   z-index: 0;
 }
-@media only screen and (max-width: 769px) {
-  .header img{
-    position: absolute;
-    width: 300px;
-    top: -140px; right: -20px;
-  }
-} 
-@media only screen and (max-width: 600px) {
-  .header img{
-    display: none;
-  }
-}
+
 .mdl-layout__drawer-button{
   display: none !important;
 }
@@ -76,7 +55,12 @@
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .leftCollumn {
+    position: relative;
     grid-template-columns: 100% ;
+    margin-top: 170px;
+  }
+  .apiRef {
+    display: none;
   }
 } 
 
