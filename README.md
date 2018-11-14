@@ -2,7 +2,7 @@ Live News app pulling the latest articles from https://newsapi.org. You can sort
 
 Live demo: https://frdvorak.github.io/newsfeed/
 
--- React, APIs, React MDL, React Router
+-- React, APIs, React MDL
 
 ![livenews](https://user-images.githubusercontent.com/40566364/47968294-e008fb00-e05f-11e8-99b0-4d1a579c4944.jpg)
 
